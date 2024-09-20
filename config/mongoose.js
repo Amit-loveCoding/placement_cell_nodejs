@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+// Use DB_URL from the .env file
+const uri = process.env.DB_URL;
 
-mongoose.connect('mongodb://127.0.0.1/placement_cell');
+mongoose.connect(uri);
 
 const db = mongoose.connection;
 
