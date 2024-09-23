@@ -3,6 +3,8 @@ require('dotenv').config();
 // Use DB_URL from the .env file
 const uri = process.env.DB_URL;
 
+mongoose.set('strictQuery', false);
+
 mongoose.connect(uri);
 
 const db = mongoose.connection;
